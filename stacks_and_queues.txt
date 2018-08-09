@@ -1,0 +1,72 @@
+// 1. What is the main difference between a stack and a queue?
+
+Answer: A Stack is a data structure which is designed to work LIFO (Last in First out). This is much different from a queue
+which is designed to do FIFO (First in First out). For example, if we had a server handling requests, which would be better to
+use? Well it seems to make more sense to do FIFO since whomever makes a request first should see data first. But in the case of compilers
+it makes more sense to use a LIFO data structure.
+
+// 2. What are the similarities between stacks and queues?
+
+Answer: Similarities are these are both data structures, and inherently data structures are trying to accomplish the same goals of
+organizing and storing data for easiest access and modification.
+
+// 3. Imagine you are an engineer tasked with implementing the UNDO and REDO options in a word processor such as Microsoft Word. Which data structure would you use for each option and why?
+
+Answer: For the REDO option I would use the FIFO data structure, as an example: I type "to be or not to be", I delete the last "be" and want 
+to REDO it, the First in in this case would be the first in line in the deletion memory queue, and I want to pull this most recently deleted and put 
+it back on the word processor. For the UNDO option I would choose LIFO. For example: I type the words "to be or not to be", I would want to undo the last "be"
+so Last in being last "be" should be the first out. 
+
+// Programming Questions
+// You may program the following question in any language of your choice. Before you begin coding, write out a plan as to how you will solve the question.
+
+// 1. Given a string, reverse it using a stack. For example, the string "Bloc!" should be converted to "!colB".
+
+function reverse(str) {	
+	var reversed = [];
+	var arr = str.split("");
+	for (let i=0; i=arr.length; i++){
+		reversed = reversed + arr.pop();
+	}
+	return reversed;
+}
+reverse("superb");
+
+// 2. Implement the delete functionality of a stack using one queue. Make a FIFO data structure mirror the functionality of a LIFO data structure.
+
+ CLASS Stack
+
+ FUNCTION pop(queue)
+
+  INIT a new stack 
+  FOR stack in queue
+	CALL stack.pop  //removes top (last) element
+	RETURN stack.pop character 
+  END FOR
+
+ END FUNCTION
+
+END CLASS
+
+// 3. Fill in the methods for the following Queue class so that it will work as expected (FIFO).
+
+CLASS QUEUE
+ FUNCTION enqueue(element)
+   APPEND element to the end of the list
+ END FUNCTION
+
+ FUNCTION dequeue
+   SET temp to the first element
+   REMOVE FIRST element of list from list
+   RETURN temp
+ END FUNCTION
+END CLASS
+
+
+
+
+
+
+
+
+
