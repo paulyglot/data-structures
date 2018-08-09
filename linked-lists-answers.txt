@@ -1,0 +1,106 @@
+// 1. What are some pros and cons of using linked lists instead of arrays?
+
+//Answer: Linked lists never have empty placeholders (so more memory efficient), because we
+//instantiate every node. Each node is independent in memory so the operating system may use any 
+//available location to store it. However it can be innefficient to access an element because each
+//node may exist anywhere in physical memory. Nodes must be accessed in order starting from the first
+//node (the head). Whereas arrays elements are indexed and can be accessed immediately by stating the 
+//index of the element within the array. 
+
+// 2. Come up with a real world example of a linked list.
+
+//Answer: Similar to a train, train cars are linked in a specific order so they can be unloaded, loaded,
+//transferred, dropped off and picked up in the most efficient manner. We can stop teh train, unload each 
+//car of it's contents then let the train go on, but this would be inneficient as all the cars would be waiting
+//while one was being unloaded, instead the cars are loaded on the train in order so that a whole chunk of it can 
+//be detached, and the remainder of the train moves on. Then end of the train is easier to detach than a portion 
+//in the middle. But if needed however, you can insert and remove items at any point in the train.
+
+// Programming Questions
+// You may program the following questions in any language of your choice (JavaScript, pseudocode, etc.).
+
+// Before beginning to code, write out a plan explaining how to solve the question.
+
+// 1. The Linked List push function should take a value, create a node, and add it to the end of a list. 
+// Below is a push function for a singly linked list. However, there is something wrong with it. Find the bug 
+// and fix the code.
+
+LinkedList.prototype.push = function(element) {
+ SET node = {
+   value: element,
+   next: null
+ }
+
+ IF the head node does not exist
+   THEN SET head to node
+ ELSE
+   SET current node to head
+   WHILE current.next 
+   	  SET current to current.next 
+   SET current.next to node
+ } 
+}
+
+// 2. Given an unsorted singly linked list, remove all duplicates from the linked list.
+function LinkedList(){
+	this.head = null;
+}
+
+LinkedList.prototype.removeDuplicates = function(){
+	if (!this.head || !this.head.next){
+		console.log('No duplicates found.');
+		return;
+	}
+	var p1;
+	var p2;
+	var nodes = {};
+	p1 = this.head;
+	p2 = p1.next;
+	nodes[p1.data] = true;
+	while (p2){
+		var data = p2.data;
+		if (nodes[data]) {
+			p1.next = p2.next;
+		} else {
+			nodes[data] = true;
+			p1 = p2;
+		}
+		p2 = p2.next
+	}
+};
+
+// 3. Given an unsorted singly linked list, reverse it.
+function reverseLL(){
+	if(!ssl.head || !sll.head.next) return sll;
+
+	var nodes=[],
+	current=sll.head;
+	while(current){
+		nodes.push(current);
+		current=current.next;
+	}
+	var reversedLL = new LinkedList();
+
+	reversedLL.head = nodes.pop();
+	current = reversedLL.head;
+
+	var node = nodes.pop();
+	while(node){
+		node.next = null;
+		current.next = node;
+		current = current.next;
+		node = nodes.pop();
+	}
+	return reversedLL;
+}
+
+
+
+
+
+
+
+
+
+
+
