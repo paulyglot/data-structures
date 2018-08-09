@@ -1,0 +1,133 @@
+// 1. What is a binary tree and what makes it unique to other trees?
+Answer: It is a tree that follows a single rule that each data point points to either the left 
+or the right. If we're looking at ages for example, when starting at a single node then progressing
+forward we come against 2 nodes, both with an age. Smaller ages or numbers would be assigned or searched 
+to the left, while older to the right. This left right hierarchy of ordering by size is unique to this tree.
+
+// 2. What is a heuristic?
+Answer: Guesses an algorithm makes to solve complex problems sooner by sacrificing accuracy (but still
+	maintaining good enough accuracy).
+
+// 3. What is another problem besides the shortest-path problem that requires the use of heuristics?
+Answer: Whether an investor should invest in a certain stock/market to reach his financial goals fastest.
+
+// 4. What is the difference between a depth-first search and a breadth-first search?
+Answer: DFS starts searching a tree at root and explores as far as possible along each 
+branch before backtracking. BFS starts at root as well but going row by row exploring neighboring nodes before
+continuing to next row.
+
+// 5. Explain in your own words what an undirected, a-cyclic, unweighted graph is.
+Answer: No clear end or beginning, non-looping and not assigning cost of travel between nodes.
+
+// 6. What kind of graph is a binary search tree?
+Answer: Directed, A-cyclic, unweighted 
+
+// Programming Questions
+// For the following questions, describe in words how you could solve the problem 
+// and then do so. Use the depiction of the Binary Search Tree to refer to the examples.
+
+// 1. Given a Binary Search Tree and a value, write a function that checks to see 
+// whether the value exists within the tree.
+
+// Example: The value 10 exists in the tree. The value 23 does not exist in the tree.
+
+function search(rootNode, val) {
+    if (rootNode.key === null)
+        return null;
+
+    var nodeKey = parseInt(rootNode.val);
+    if (val < nodeKey) {
+        return searchBST(rootNode.left, val);
+    } else if (val > nodeKey) {
+        return searchBST(rootNode.right, val);
+    } else {
+        return rootNode.value;
+    }
+}
+
+// 2. Given a Binary Search Tree and two nodes, n1 and n2, write a function that 
+// finds the distance between the two nodes.
+
+// Example: The distance between the nodes 4 and 10 is 4. The distance between the 
+// nodes 8 and 10 is 1. The distance between the nodes 1 and 14 is 4.
+
+public class PrintDistance {
+	public int findDistance(Node root, int n1, int n2) {
+		int x = Pathlength(root, n1) - 1;
+		int y = Pathlength(root, n2) - 1;
+		int lcaData = findLCA(root, n1, n2).data;
+		int lcaDistance = Pathlength(root, lcaData) - 1;
+		return (x + y) - 2 * lcaDistance;
+	}
+
+	public int Pathlength(Node root, int n1) {
+		if (root != null) {
+			int x = 0;
+			if ((root.data == n1) || (x = Pathlength(root.left, n1)) > 0
+					|| (x = Pathlength(root.right, n1)) > 0) {
+				// System.out.println(root.data);
+				return x + 1;
+			}
+			return 0;
+		}
+		return 0;
+	}
+
+	public Node findLCA(Node root, int n1, int n2) {
+		if (root != null) {
+			if (root.data == n1 || root.data == n2) {
+				return root;
+			}
+			Node left = findLCA(root.left, n1, n2);
+			Node right = findLCA(root.right, n1, n2);
+
+			if (left != null && right != null) {
+				return root;
+			}
+			if (left != null) {
+				return left;
+			}
+			if (right != null) {
+				return right;
+			}
+		}
+		return null;
+	}
+
+	public static void main(String[] args) throws java.lang.Exception {
+		Node root = new Node(5);
+		root.left = new Node(10);
+		root.right = new Node(15);
+		root.left.left = new Node(20);
+		root.left.right = new Node(25);
+		root.right.left = new Node(30);
+		root.right.right = new Node(35);
+		root.left.right.right = new Node(45);
+		PrintDistance i = new PrintDistance();
+		System.out.println("Distance between 45 and 20 is : "
+				+ i.findDistance(root, 45, 20));
+	}
+}
+
+class Node {
+	int data;
+	Node left;
+	Node right;
+
+	public Node(int data) {
+		this.data = data;
+		this.left = null;
+		this.right = null;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
