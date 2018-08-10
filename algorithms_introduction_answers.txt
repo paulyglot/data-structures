@@ -1,0 +1,107 @@
+// 1. Using proper pseudo-code, describe the following primitive algorithms:
+// Making coffee;
+
+FUNCTION makeCoffee
+	SET waterBoil
+	  WHILE waterBoil 
+	 	IF added desired amount of water 
+	 		turn on water boiler 
+	 	ELSE 
+	 		do not turn on water boiler 	
+	 WHILE END 
+
+	 SET coffeePrep
+	 WHILE coffeePrep  
+	 	GET drinking cup
+	 	GET pre-ground beans
+	    GET table spoon
+	    GET french press, and remove top lid press
+	    WITH spoon scoop 2 heaping piles of coffee and add EACH to empty french press
+	WHILE END
+
+	SET coffeeTime
+	WHILE coffeeTime
+		ADD boiling water to french press
+		PUT french press lid on french press and push press down to where top of liquid
+	    WAIT 5 minutes 
+	    PUSH french press lid all the way to bottom of french press 
+	    POUR contents of coffee into drinking cup 
+	WHILE END 
+FUNCTION END
+
+// Washing dishes;
+
+FUNCTION washDishes
+	SET dirtyDishes
+    WHILE dirtyDishes
+		GET each dish rinse briefly IN sink
+		IF dish is plate 
+			put on bottom row 
+		ELSE IF
+			put dish on top shelf 
+		ELSE 
+			put dish IN silverware holder 
+	WHILE END
+	SET dishWasher
+		IF dishWasher full (all dishes are rinsed and put into dishwahser)
+			obtain dish washing detergent 
+			add detergent up to fill line 
+			close detergent lid 
+			close dishwasher door 
+			turn to medium wash 
+			turn to high drying time 
+			press start
+		ELSE 
+			GET more dishes and put into dishwasher until full or no more dishes present
+	    IF END	  
+FUNCTION END
+
+// Prepping hair for wedding day (men's version)
+FUNCTION weddingHair
+	SET cleanHair
+		WHILE hair is dirty 
+			GET clean hair by goin into shower or washing under sink 
+		Dry off hair lightly by grabbing and squeezing the hair with a towel 
+		WHILE END 
+	SET volumizer
+		WHILE blowdryer turned on AND hair is wet
+			GET volumizer spray and take off cap and put into left hand
+			WITH right hand hold blowdryer and turn onto medium heat and high speed 
+			Point blowdryer at hair and press volumizer spray button and squirt into hair (about 10 times)
+		WHILE END
+	SET pomade 
+		IF hair has been volumized AND blowdryed 
+			GET pomade creme and open container
+			Take dime-sized amount of pomade and rub vigorously in hands for 5-10 seconds to being emulsification 
+			Rub your hands through your hair grabbing roots of hairs on top of head
+			Wash hands off 
+			Put pomade away 
+		IF END
+	SET hairspray 
+		IF hair clean AND volumizer in AND pomade in
+			Hold your left hand over eyes 
+			Spray hairspray onto top of head for 5 seconds spraying evenly over head 
+			Put hairspray away 
+			Blowdrying hair on lowspeed and hot temperature for 20 seconds keeping the blowdryer 15 inches away from hair  
+		IF END
+FUNCTION END
+
+// 2. As with the knot algorithm, there may be more than one way to solve the problem. 
+// It is essential to try to pick the best algorithm for a situation. Name three companies 
+// who created an algorithm that made them successful, and what about each of your cases make them stand out?
+
+Spotify - music preference algirithms 
+Airbnb - locational preferences algorithms
+Tinder - your like preferences
+
+// 3. Hypothesize about what constitutes an efficient algorithm versus an inefficient algorithm.
+
+What makes a good algorithm is one that produces the correct outputs for any set of legal
+inputs. It should also execute efficiently with the fewest number of steps as possible. And 
+it should be designed in such a way that it's understood by others so they can modify it.
+
+
+
+
+
+
