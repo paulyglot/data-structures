@@ -1,0 +1,66 @@
+// 1.What is time complexity and what is its relation to algorithms?
+
+Answer: a metric used to describe the efficiency of an algorithm. It's very important to know how long it will take (algorithm's speed) to process input depending on the change of input size.
+
+// 2.What is runtime?
+
+Answer: runtime is the physical time duration of an algorithm, as referred to above when noting how long it will take.
+
+// 3.How is the runtime of an algorithm calculated?
+
+Answer: we add up how many instructions the algorithm will execute as a function of the size of its input, then simplify expression to the largest term and drop any constants (eg. 1 + n + n = 
+1 + 2n = 2n = n = runtime = function foo is 0(n)).
+
+// 4.Name the six types of algorithm growth rates we saw in this checkpoint and list them in order of most efficient to least efficient. Now Google another algorithmic growth rate not covered and place it in the correct spot in your list.
+
+Answer: Constant O(1), Logarithmic O(log n), Linear O(n),  Log-Linear O(n log n), Quadratic 
+O(n^2), *Cubic*, Exponential O(2^n). 
+
+// 5.Choose one of the algorithmic growth rates from the last question and make a comparison to a real-life situation.
+
+Answer: Cubic Growth Rate is similar to credit, when you first start you don't get going by much, but once you do, you're ease of purchasing items, APR's, credit limits and offers goes through the roof!
+
+// 6.Determine the time complexity of the following snippet of code. It is commonly known as a linear search.
+
+Answer: 0(n)
+
+FUNCTION linearSearch(array, target)
+ FOR each number in the array
+   IF number = target THEN
+     RETURN true
+   END IF
+ END FOR
+ RETURN false
+END FUNCTION
+
+// 7.Determine the time complexity of the following snippet of code.
+
+Answer: 0(n^2)
+
+FUNCTION foo(array)
+ FOR each number in the array
+   FOR each number in the array
+     print "Hello"
+   END FOR
+ END FOR
+END FUNCTION
+
+// 8.Determine the time complexity of the following snippet of code. It is commonly known as the Fibonacci sequence.
+
+Answer: O(2^n)
+
+FUNCTION fibonacci(number)
+ IF number < 1 THEN
+   ERROR
+ ELSE IF number = 1 or 2 THEN
+   RETURN 1
+ ELSE
+   CALL fibonacci WITH number - 2 RETURNING twoBack
+   CALL fibonacci WITH number - 1 RETURNING oneBack
+   RETURN twoBack + oneBack
+ END IF
+END FUNCTION
+
+// 9.Out of the code snippets you just saw, which is the most time efficient?
+
+Answer: Number 6, the first, which is a Linear Growth Rate  
