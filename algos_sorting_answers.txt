@@ -1,0 +1,38 @@
+1.Write pseudocode for bubble sort.
+
+FUNCTION bubbleSort(collection)
+REPEAT
+     SET swapped to false
+     FOR i = FIRST INDEX of collection to LAST INDEX of collection - 1
+       IF collection[i] > collection[i + 1] THEN
+         SET tmp to collection[i]
+         SET collection[i] to collection[i + 1]
+         SET collection[i + 1] to tmp
+         SET swapped to true
+       END IF
+     END FOR
+   UNTIL swapped is FALSE
+
+2.Write pseudocode for quicksort.
+
+FUNCTION quickSort(items, left, right)
+    SET index
+    IF items.length > 1 
+        left equal to typeof left does not equal "number" ? 0 : left
+        right equal to typeof right does not equal "number" ? items.length - 1 : right
+        index equal to partition(items, left, right)
+        IF left < index - 1 
+            quickSort(items, left, index - 1)
+        END IF 
+        IF index < right 
+            quickSort(items, index, right)
+        END IF
+    END IF 
+
+3.We talked about time complexity in a previous checkpoint, and how to get an idea of the efficiency of an algorithm. After looking at the pseudocode for the above sorting methods, identify why merge sort and quick sort are much more efficient than the others. Walking through each algorithm with a few sample collections may help.
+
+Answer: We see that there is a log-linear growth rate found in sorting methods sucj as quick sort and merge sort, these are relatively fast for how much data they manage to sort through. 
+
+4.All of the sorts addressed in this checkpoint are known as comparison sorts. Research bucket sort and explain how it works. What is the ideal input for bucket sort?
+
+Answer: Also known as bin sort, is a sorting algorithm that works by distributing elements of an array into a number of buckets. Each bucket is then sorted individually with either another sorting algorithm or recursively applying the bucket sort algorithm. Ideal input for this sorting method is when input is uniformly distributed over a range (eg. floating point numbers in range from 0.0 to 1.0).
