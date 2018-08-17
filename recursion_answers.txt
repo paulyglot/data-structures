@@ -1,0 +1,74 @@
+####Questions 
+
+1.Define and compare recursion and iteration.
+
+A: Recursion is a process performed by repeating the same steps until it is complete, whereas iteration is using loops to ‘iterate’ through steps. Iteration tends to be faster but is harder to implement whereas recursion is easier to setup but can fall victim to performance concerns. 
+
+2.Name five algorithms that are commonly implemented by recursion.
+
+A: factorial operations, binary search, quicksort, merge sort, fibonacci 
+
+3.When should you use recursion, and when should you avoid recursion? Give examples for each.
+
+A:  Recursion should be used sparingly, and some resources elude: if and only if 1. The problem is naturally recursive (you can state it in terms of itself) and 2. If a relatively strait forward iterative solution is not available.
+
+4.Compare the recursive and iterative solutions to the three algorithms from the checkpoint (Factorial, Maximum, and Fibonacci). What is similar, and what is different?
+
+A: They both repeat or loop until the process is performed to completion, but they are different in the sense that the recursive function needs base cases.
+
+####Code
+
+5.Given a multi-dimensional collection (such as an array) where the number of dimensions is unknown, write a recursive algorithm to count the number of items in the entire collection.
+
+
+function recursiveCount(array, index){
+	index = index || 0;
+
+	if (array[index+1]){
+		return recursiveCount(array, index+1);
+	}else if (index === 0){
+		return 0;
+	} else {
+		return index + 1;
+	}
+}
+
+var array = [1,2,3,4,5,5,6,6,7,7,8,8];
+console.log(recursiveCount(array));
+
+
+6.A palindrome is a word or phrase whose spelling is the same either direction (e.g., racecar). Write a recursive algorithm to determine if a given word or phrase is a palindrome.
+
+
+function recursivePalindrome(string) {
+    var stringLength = string.length;
+    if (stringLength === 0 || stringLength === 1) {
+        return true;
+    }
+    
+    if (string[0] === string[stringLength - 1]) {
+        return recursivePalindrome( string.slice(1, stringLength - 1) );
+    }
+    
+    return false;
+};
+
+console.log(recursivePalindrome('tattarrattat'));
+
+
+7.Google Easter Egg: Google the term "recursion". Google will prompt you with "Did you mean: recursion". Explain why this behavior exhibits properties of recursion.
+
+A: The fact that it's returning recursion describes how recursion works and that's solving a problem where the answer ('did you mean ...') depends on instances of the same problem.
+
+
+
+
+
+
+
+
+
+
+
+
+
