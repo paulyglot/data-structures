@@ -21,6 +21,7 @@ A: They both repeat or loop until the process is performed to completion, but th
 5.Given a multi-dimensional collection (such as an array) where the number of dimensions is unknown, write a recursive algorithm to count the number of items in the entire collection.
 
 function recursiveCount(array, index){
+    array = [].concat.apply([], array);
     index = index || 0;
     if (array[index+1]){
         return recursiveCount(array, index+1);
@@ -30,10 +31,7 @@ function recursiveCount(array, index){
         return index + 1;
     }
 }
-
-var array = [[1,2],[3,5],[3],[5]];
-var merged = [].concat.apply([], array);
-console.log(recursiveCount(merged));
+recursiveCount([[1,2,3],[4],[5,6]]);
 
 6.A palindrome is a word or phrase whose spelling is the same either direction (e.g., racecar). Write a recursive algorithm to determine if a given word or phrase is a palindrome.
 
